@@ -1,4 +1,5 @@
 cargo = []
+highest_stack = 0
 with open("day5/data.txt", "r") as data:
     line = ""
     current_line = 0
@@ -25,9 +26,11 @@ with open("day5/data.txt", "r") as data:
 
         for i in range(instruction[0]):
             cargo[instruction[2] - 1].insert(0, cargo[instruction[1] - 1].pop(0))
-        print(cargo)
+            if len(cargo[instruction[2] - 1]) > highest_stack: highest_stack = len(cargo[instruction[2] - 1])
+        # print(cargo)
 
 result = ""
 for stack in cargo:
     result += stack[0]
 print(result)
+print(highest_stack)
