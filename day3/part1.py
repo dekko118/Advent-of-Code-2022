@@ -16,6 +16,6 @@ with open("day3/data.txt", "r") as data:
                         print(ord(letter) - 96)
                     else:
                         sum_priorities += ord(letter) - 38
-                        print(ord(letter) - 37)
+                        print(ord(letter) - 38)
                     break
         print(sum_priorities)
